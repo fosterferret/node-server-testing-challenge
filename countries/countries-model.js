@@ -1,21 +1,21 @@
 const db = require("../data/db-config");
 
-async function add(city) {
-  return db("cities")
-    .insert(city, "id")
+async function add(country) {
+  return db("countries")
+    .insert(country, "id")
     .then(ids =>
-      db("cities")
+      db("countries")
         .where({ id: ids[0] })
         .first()
     );
 }
 
 async function remove(id) {
-  return db("cities").del(id);
+  return db("countries").del(id);
 }
 
 function getAll() {
-  return db("cities");
+  return db("countries");
 }
 
 module.exports = {

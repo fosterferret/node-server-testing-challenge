@@ -1,5 +1,5 @@
 const express = require("express");
-const countries = require("../countries/countries-models");
+const countries = require("../countries/countries-model");
 const server = express();
 server.use(express.json());
 

@@ -1,4 +1,4 @@
-const Countries = require("./countries-models");
+const Countries = require("./countries-model");
 const db = require("../data/db-config");
 
 describe("countries model", () => {
@@ -22,7 +22,7 @@ describe("countries model", () => {
       expect(countries).toHaveLength(1);
     });
 
-    it("should insert country into database", async () => {
+    it("should insert country column into database", async () => {
       await Countries.add({ country: "Japan" });
 
       const countries = await db("countries");
@@ -35,8 +35,8 @@ describe("countries model", () => {
     });
   });
 
-  describe("remove()", () => {
-    it("should remove an added country", async () => {
+  describe("remove function", () => {
+    it("should remove an inserted country", async () => {
       const records = await db("countries").insert({ country: "Japan" }, "id");
       expect(records).toHaveLength(1);
 
